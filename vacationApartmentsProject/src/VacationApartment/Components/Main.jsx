@@ -5,7 +5,7 @@ import axios from "axios"
 
 export const Main = () => {
 
-    axios.defaults.baseURL="http://localhost:3001/"
+    axios.defaults.baseURL=process.env.REACT_APP_SERVER_CONNECTION
 
     return <>
             <BrowserRouter>

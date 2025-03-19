@@ -22,14 +22,19 @@ app.use('/apartment', apartmentRouter)
 
 const port = 3001
 
-// mongoose.connect(process.env.LOCAL_URI)
-mongoose.connect(process.env.URI)
+mongoose.connect(process.env.URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 2000000000, // זמן פסק של 20 שניות
+    socketTimeoutMS: 2000000000 // זמן פסק של 20 שניות
+})
 .then(() => {
-        console.log('connect to mongoDB');
-    })
-    .catch(err => {
-        console.error({error:err.message})
-    })
+    console.log('connect to mongoDB');
+})
+.catch(err => {
+    console.error({error: err.message});
+});
+
 
 app.listen(port, () => {
     console.log(`my application is running on http://localhost:${port}`)

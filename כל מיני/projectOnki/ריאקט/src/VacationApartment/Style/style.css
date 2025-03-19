@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.logo {
+    margin: 0.5rem;
+    margin-right: 1.5rem;
+    height: 100%;
+}
+
+.homeNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100px;
+    background-color: #047f9a14;
+}
+
+.home .homeNav {
+    background-color: white;
+}
+
+.homeNav .links {
+    display: flex;
+    justify-content: end;
+    width: 28%;
+    padding-top: 0.9rem;
+}
+
+/* .oneLink .homeNav {
+    position: sticky;
+    top: 0%;
+} */
+
+.oneLink .homeNav .links .niceLink {
+    margin: 2%;
+    margin-left: 8%;
+}
+
+.niceLink,
+.niceLinkFooter {
+    background-color: #047F9A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16), 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+    font-size: larger;
+    height: max-content;
+}
+
+.niceLink {
+    padding: 4% 4%;
+    margin: auto;
+    margin-left: 8%;
+
+}
+
+.niceLinkFooter {
+    padding: 0.5% 42%;
+    margin: auto;
+    margin-left: 1%;
+    position: relative;
+    animation-name: niceLinkFooterAnimation;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes niceLinkFooterAnimation {
+    0% {
+        left: -0.8%;
+        top: 0px;
+    }
+
+    50% {
+        left: 0.8%;
+        top: 0px;
+    }
+
+    100% {
+        left: -0.8%;
+        top: 0px;
+    }
+}
+
+#advisterLink {
+    padding: 0.5% 30.3%;
+}
+
+.niceLink:hover,
+.niceLinkFooter:hover {
+    background-color: #05A3B2;
+    color: #fff;
+    transform: scale(1.05);
+    transition: background-color 0.3s, transform 0.3s;
+    text-decoration: none;
+}
+
+.home1 {
+    margin-top: 10px;
+}
+
+.img {
+    width: 100vw;
+}
+
+.home1 .mainTitle {
+    color: white;
+    position: absolute;
+    left: 60%;
+    font-size: 40px;
+}
+
+.home h1,
+.home h3 {
+    line-height: normal;
+    font-weight: bold;
+}
+
+.home h1 {
+    font-size: 2em;
+    width: max-content;
+    margin-top: 10%;
+    margin-right: 15%;
+    margin-bottom: 0%;
+    color: white;
+    text-shadow:
+        -1px -1px 0 rgba(3, 83, 97, 0.3),
+        1px -1px 0 rgba(3, 83, 97, 0.3),
+        -1px 1px 0 rgba(3, 83, 97, 0.3),
+        1px 1px 0 rgba(3, 83, 97, 0.3);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    animation-name: h1Animation;
+    animation-duration: 3s;
+}
+
+@keyframes h1Animation {
+    0% {
+        left: -150px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.home h3 {
+    font-size: 1.17em;
+    margin-right: 25%;
+    margin-bottom: 0%;
+    color: rgb(3, 83, 97);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: relative;
+    animation-name: h3Animation;
+    animation-duration: 3s;
+}
+
+@keyframes h3Animation {
+    0% {
+        left: 150px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.home1 .homePicturesDiv {
+    display: grid;
+    grid-template-columns: 46% 46%;
+    grid-template-rows: 46% 46%;
+    row-gap: 6%;
+    column-gap: 6%;
+    padding: 2%;
+    margin-top: 2%;
+    margin-right: 2.5%;
+}
+
+.homePicturesRegular {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.16), 0 4px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.homePicturesRegular:hover {
+    width: 102%;
+    height: 102%;
+    margin: -1%;
+    box-shadow: 0 16px 40px 0 rgba(0, 0, 0, 0.16), 0 16px 80px 0 rgba(0, 0, 0, 0.12);
+}
+
+.homePicturesAnimations {
+    position: relative;
+    animation-name: homePicturesAnimation;
+    animation-duration: 1s;
+}
+
+.homePicturesAnimations:nth-of-type(even) {
+    animation-name: homePicturesAnimation2;
+}
+
+@keyframes homePicturesAnimation {
+    0% {
+        left: 25px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes homePicturesAnimation2 {
+    0% {
+        left: -25px;
+        top: 0px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.footerDiv {
+    position: relative;
+}
+
+.overPart {
+    position: absolute;
+    top: 55%;
+    right: 5%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0% 10%;
+    text-align: center;
+}
+
+.overText {
+    color: white;
+    width: 65%;
+    font-size: large;
+    font-style: bold;
+    text-align: justify;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.accordions {
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    padding: 2%;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 25px;
+    text-align: right;
+    height: 100%;
+}
+
+.accordions h3 {
+    line-height: normal;
+    font-weight: bold;
+    color: rgb(3, 83, 97);
+    direction: rtl;
+    margin-bottom: 2%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.lor {
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    padding: 2%;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 25px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.loginOrRegisterLinks {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.loginOrRegisterLinks .niceLink {
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 5%;
+    background-color: #f1f1f1;
+    color: #047F9A;
+    box-shadow: none;
+}
+
+.loginOrRegisterLinks .niceLink:hover {
+    transform: none;
+    transition: none;
+}
+
+.loginOrRegisterLinks .active {
+    color: white;
+    background-color: #047F9A;
+}
+
+
+.login,
+.register {
+    width: 80%;
+    margin: auto;
+    padding: 2%;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 25px;
+}
+
+.form {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form .inputTextField {
+    margin-bottom: 1.4rem;
+}
+
+#submitInput, #addPlugin {
+    margin: auto;
+    color: #047F9A;
+    border-color: #047F9A;
+    border-width: 0.1px;
+}
+
+#submitInput:hover{
+    background-color: #047F9A;
+    color: white;   
+}
+
+#closeDialog {
+    direction: ltr;
+}
+
+#addApartment {
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #047F9A;
+    text-align: center;
+}
+
+#DialogAddApartment{
+    z-index: 500;
+}
+
+#DialogAddApartment .css-10d30g3-MuiPaper-root-MuiDialog-paper {
+    height: 70%;
+    width: 30%;
+    background-color: #f1f1f1;
+}
+
+#DialogAddApartmentContent {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.roundButton {
+    display: block;
+}
+
+.roundButton svg {
+    fill: #047F9A;
+}
+
+.roundButton:hover svg {
+    fill: red;
+}
+
+#inputApartmentDetailes{
+    width: 80%;
+    margin: auto;
+    padding: 4%;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+
+#addPlugin{
+    margin-bottom: 1.4rem;
+}
+
+#pluginTitle{
+    margin: auto;
+    color: #047F9A;
+}
+
+#apartmentButton{
+    color: white;
+    background-color: #047F9A;
+    margin-left: 33%;
+    height: 50px;
+    width: 500px;
+    border-radius: 7px;
+}
+
+#apartmentButton:hover{
+    background-color: #05A3B2;
+    transform: scale(1.05);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#noPlugins{
+    color:  #047F9A;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.128);
+    margin-top: 2%;
+}
+
+.apartment{
+    text-align: center;
+    border-style: solid;
+    border-radius: 30px;
+    width: fit-content;
+    padding: 2%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-color: #047F9A;
+}
+
+.filters{
+    width: 10%;
+    height: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sliders{
+display: flex;
+column-gap: 7vw;
+}
+#apartment_card{
+    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+}
+#cards{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#apartmentsDirection *{
+    direction: ltr;
+}

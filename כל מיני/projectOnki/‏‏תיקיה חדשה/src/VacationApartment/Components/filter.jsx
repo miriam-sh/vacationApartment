@@ -1,0 +1,117 @@
+import * as React from 'react';
+import Box from '@mui/joy/Box';
+import Radio from '@mui/joy/Radio';
+import RadioGroup from '@mui/joy/RadioGroup';
+
+export default function ToFilter({ list, filter, find,filterBy,setFiterBy,val }) {
+  const [value, setValue] = React.useState(val)
+  
+  React.useEffect(() => {
+    const updateFilter = async () => {
+      await find();
+    };
+
+    updateFilter();
+  }, [filterBy]);
+
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, margin:"auto" }} id='apartmentsDirection'>
+      {/* <Typography
+        id="segmented-controls-example"
+        sx={{ fontWeight: 'lg', fontSize: 'sm' }}
+      >
+      </Typography> */}
+      <RadioGroup
+        orientation="horizontal"
+        aria-labelledby="segmented-controls-example"
+        name="search"
+        value={value}
+        onChange={async (event) => {
+          setValue(event.target.value)
+          if(filter === "city")
+          {
+          if(event.target.value == -1)
+            setFiterBy({...filterBy,city:undefined});
+          else
+          await setFiterBy({...filterBy,city:event.target.value});
+          }
+        else if(filter === "category")
+        {
+          if(event.target.value == -1)
+            setFiterBy({...filterBy,category:undefined});
+          else
+          await setFiterBy({...filterBy,category: event.target.value});
+        }        
+        }}
+        sx={{
+          minHeight: 48,
+          padding: '4px',
+          borderRadius: '12px',
+          bgcolor: '#ededed',
+          '--RadioGroup-gap': '4px',
+          '--Radio-actionRadius': '8px',
+          margin:"auto"
+        }}
+      >
+        {list.map((item) => (
+          <Radio
+            key={item._id}
+            color="neutral"
+            value={item._id}
+            disableIcon
+            label={item.name}
+            variant="plain"
+            sx={{
+              px: 2, alignItems: 'center', '&:hover': {
+                color: "white",
+              }
+            }}
+            slotProps={{
+              action: ({ checked }) => ({
+                sx: {
+                  ...(checked && {
+                    bgcolor: 'white',
+                    color: '#05A3B2',
+                    boxShadow: 'sm',
+                    '&:hover': {
+                      bgcolor: '#05A3B2',
+                      //  color:"white",
+                    },
+                  }),
+                  '&:hover': {
+                    bgcolor: '#05A3B2',
+                    color: "white",
+                  }
+                },
+              }),
+            }}
+          />
+        ))}
+        <Radio
+          key={15}
+          color="neutral"
+          
+          value={-1}
+          disableIcon
+          label={"הכל"}
+          variant="plain"
+          sx={{ px: 2, alignItems: 'center'}}
+          slotProps={{
+            action: ({ checked }) => ({
+              sx: {
+                ...(checked && {
+                  bgcolor: 'background.surface',
+                  boxShadow: 'sm',
+                  '&:hover': {
+                    bgcolor: '#05A3B2',
+
+                  },
+                }),
+              },
+            }),
+          }}
+        />
+      </RadioGroup>
+    </Box>
+  );
+}

@@ -1,0 +1,68 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import EmailIcon from '@mui/icons-material/Email';
+export default function MoreDetails({open, handleClose,apartment}) {
+
+  
+
+  return (
+    <React.Fragment>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title" sx={{textAlign:"center"}}>
+          {apartment.name}
+        </DialogTitle>
+        <DialogContent>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      <ListItem>
+
+        <ListItemText sx={{textAlignLast:"end",marginRight:"10px"}} primary="טלפון" secondary={apartment.advertiser.phone} />
+        <ListItemAvatar>
+          <Avatar>
+            <LocalPhoneIcon />
+          </Avatar>
+        </ListItemAvatar>
+      </ListItem>
+      <ListItem>
+        <ListItemText sx={{textAlignLast:"end",marginRight:"10px"}} primary="וואצאפ" secondary={apartment.advertiser.anotherPhone} />
+        <ListItemAvatar>
+          <Avatar>
+            <PhoneIphoneIcon />
+          </Avatar>
+        </ListItemAvatar>
+      </ListItem>
+      <ListItem>
+        <ListItemText sx={{textAlignLast:"end",marginRight:"10px"}} primary="מייל" secondary={apartment.advertiser.email} />
+        <ListItemAvatar>
+          <Avatar>
+            <EmailIcon />
+          </Avatar>
+        </ListItemAvatar>
+      </ListItem>
+    </List>
+
+        </DialogContent>
+        <DialogActions>
+          <Button sx={{marginLeft:"auto",marginRight:"auto"}} onClick={handleClose} autoFocus>
+            סגור
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </React.Fragment>
+  );
+}

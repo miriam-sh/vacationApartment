@@ -22,8 +22,8 @@ app.use('/apartment', apartmentRouter)
 
 const port = 3001
 
-mongoose.connect(process.env.LOCAL_URI)
-// mongoose.connect(process.env.URI)
+// mongoose.connect(process.env.LOCAL_URI)
+mongoose.connect(process.env.URI)
 .then(() => {
         console.log('connect to mongoDB');
     })

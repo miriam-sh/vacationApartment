@@ -30,6 +30,7 @@ console.log('connect to mongoDB');
     console.log("fail!!!!!!!!!!!!!!!!!!!");
 console.error({error:err.message})
 }
+       )
 
 app.listen(port, () => {
     console.log(`my application is running on http://localhost:${port}`)

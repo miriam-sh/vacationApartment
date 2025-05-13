@@ -41,12 +41,7 @@ export const CardApartment = ({ apartment }) => {
           </>
         }
       </div>
-      {apartment.plugins.map((plugin, index) =>
-        <>
-          <Typography key={index}>{plugin}</Typography>
-          <StarOutlineIcon color="#047F9A" />
-
-        </>)}
+   
       <ListDetails city={apartment.city.name} beds={apartment.countOfBeds} category={apartment.category.name}></ListDetails>
     </div>
     <MoreDetails apartment={apartment} open={open} handleClose={handleClose}></MoreDetails>

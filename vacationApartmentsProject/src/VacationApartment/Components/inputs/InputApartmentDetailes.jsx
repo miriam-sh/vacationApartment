@@ -107,11 +107,9 @@ export const InputApartmentDetailes = ({
                 }
 
 
-                console.log(e.target[4].files[0])
-
                 const formData = new FormData();
                 formData.append('apartment', JSON.stringify(apartment));
-                formData.append('image', e.target[4].files[0] ? e.target[4].files[0] : null);
+                formData.append('image', e.target[4].files[0]? e.target[4].files[0] : null);
 
                 save(formData);
 

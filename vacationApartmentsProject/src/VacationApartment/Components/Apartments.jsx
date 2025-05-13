@@ -14,7 +14,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdLocalHotel } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
 import { Button } from "@mui/material";
-
+import SearchIcon from '@mui/icons-material/Search';
 
 export const Apartments = () => {
 
@@ -84,7 +84,10 @@ export const Apartments = () => {
 
         {filterOpen == false &&
             <div id="openFilters">
-                <Button startIcon={<FilterAltIcon></FilterAltIcon>} style={{ color: "#047F9A", fontSize: "medium" }} onClick={() => setFilterOpen(true)}>חפשו לי דירה - העיצוב מחכה לדבורי  </Button>
+                <Button startIcon={<SearchIcon></SearchIcon>} sx={{bgcolor:"#047F9A",color:"white"}} style={{fontSize: "medium" }} onClick={() => setFilterOpen(true)}>חפשו לי דירה  </Button>
+                {/* <Button variant="contained" endIcon={<SendIcon />}>
+  Send
+</Button> */}
             </div >
         }
         <br />
@@ -92,7 +95,7 @@ export const Apartments = () => {
             {filterOpen == true &&
                 <>
                     <div style={{ textAlign: "center" }}>
-                        <Button startIcon={<FilterAltOffIcon></FilterAltOffIcon>} style={{ marginBottom: "2%", color: "#047F9A", fontSize: "medium", marginRight: "12%" }} onClick={() => { setFilterOpen(false); getAllApartments() }}>ביטול הסינון</Button>
+                        <Button startIcon={<SearchIcon></SearchIcon>}  sx={{bgcolor:"#047F9A",color:"white"}} style={{ marginBottom: "2%", fontSize: "medium", marginRight: "12%" }} onClick={() => { setFilterOpen(false); getAllApartments() }}>ביטול הסינון</Button>
                         <div className="filters">
                             <div>
                                 <label className="filtersLable">מחיר</label>

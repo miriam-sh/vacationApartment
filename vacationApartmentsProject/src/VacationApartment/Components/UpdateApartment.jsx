@@ -18,8 +18,6 @@ export const UpdateApartment = () => {
 
     const save = (formData) => {
 
-        console.log(formData);
-
         axios.put(`/apartment/${id}`, formData, {
             headers: {
                 Authorization: "Bearer " + sessionStorage.getItem("advisterToken"),

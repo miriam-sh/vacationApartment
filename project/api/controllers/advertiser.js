@@ -141,6 +141,7 @@ export const loginWithNewPassword = (req, res) => {
 }
 
 export const verifyEmail = (req, res) => {
+    
     let code = Math.floor(100000 + Math.random() * 900000);
 
     let { email } = req.params

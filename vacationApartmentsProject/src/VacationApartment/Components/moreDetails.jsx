@@ -11,6 +11,8 @@ import Avatar from '@mui/material/Avatar';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import EmailIcon from '@mui/icons-material/Email';
+import { FaSackDollar } from "react-icons/fa6";
+
 export default function MoreDetails({ open, handleClose, apartment }) {
 
   return (
@@ -21,11 +23,30 @@ export default function MoreDetails({ open, handleClose, apartment }) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
+           
         <DialogTitle id="alert-dialog-title" sx={{ textAlign: "center" }}>
           {apartment.name}
         </DialogTitle>
         <DialogContent>
+          <section id="alert-dialog">
+            {/* <div>
+          {apartment && apartment.plugins.map((plugin, index) =>
+                <>
+                  <Typography key={index}>{plugin}</Typography>
+        
+                </>
+              )}</div> */}
+
           <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+          <ListItem>
+              <ListItemAvatar>
+                <Avatar>
+                  <FaSackDollar />
+                </Avatar>
+              </ListItemAvatar>
+              <ListItemText sx={{ textAlignLast: "right", marginRight: "10px" }} primary="מחיר" secondary={"₪"+apartment.price} />
+
+            </ListItem>
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
@@ -52,7 +73,7 @@ export default function MoreDetails({ open, handleClose, apartment }) {
               <ListItemText sx={{ textAlignLast: "right", marginRight: "10px" }} primary="מייל" secondary={apartment.advertiser.email} />
             </ListItem>
           </List>
-
+          </section>
         </DialogContent>
         <DialogActions>
           <Button sx={{ marginLeft: "auto", marginRight: "auto" }} onClick={handleClose} autoFocus>

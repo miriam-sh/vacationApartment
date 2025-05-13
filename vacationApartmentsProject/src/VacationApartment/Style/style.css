@@ -63,6 +63,7 @@ body {
     padding: 4% 4%;
     margin: auto;
     margin-left: 8%;
+
 }
 
 .niceLinkFooter {
@@ -300,6 +301,7 @@ body {
     width: 455px;
     text-align: center;
     margin-bottom: 4%;
+    /* margin-left: 0.1%; */
 }
 
 #apartment_card .css-1g494rb-MuiSvgIcon-root {
@@ -311,7 +313,9 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 3%;
-    min-height: 46px
+    min-height: 46px;
+    width: 105%;
+
 }
 
 #apartmentsDirection * {
@@ -597,4 +601,9 @@ label {
     text-align: center;
     color: rgba(0, 0, 0, 0.128);
     margin-top: 2%;
+}
+#alert-dialog {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }

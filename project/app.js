@@ -22,14 +22,15 @@ app.use('/apartment', apartmentRouter)
 
 const port = 3001
 
-// mongoose.connect(process.env.LOCAL_URI)
 mongoose.connect(process.env.URI)
 .then(() => {
-        console.log('connect to mongoDB');
-    })
-    .catch(err => {
-        console.error({error:err.message})
-    })
+console.log('connect to mongoDB');
+})
+.catch(err => {
+    console.log("fail!!!!!!!!!!!!!!!!!!!");
+console.error({error:err.message})
+}
+       )
 
 app.listen(port, () => {
     console.log(`my application is running on http://localhost:${port}`)
